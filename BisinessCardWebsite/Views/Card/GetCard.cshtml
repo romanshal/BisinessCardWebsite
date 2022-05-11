@@ -39,18 +39,75 @@
     </div>
 </section>
 
-<section class="custom-section" id="skills" style="min-height: 700px;">
+<section class="custom-section" id="skills">
     <div class="container">
         <div class="text-center">
-            <h1 class="display-4">My Skills</h1>
+            <h1 class="h1-tital-block">My Skills</h1>
+        </div>
+        <div class="skills-container">
+            <div class="skill-block">
+                <img class="skill-image" src="~/img/frontend.png" />
+                <div class="skill-description">
+                    <h2>Frontend</h2>
+                    <p>
+                        Provide frontend developer services for HTML, CSS, JS. UI development with Angular and TypeScript.
+                    </p>
+                </div>
+            </div>
+
+            <div class="skill-block">
+                <img class="skill-image" src="~/img/backend.png" />
+                <div class="skill-description">
+                    <h2>Backend</h2>
+                    <p>
+                        Strong knowledge of ASP.NET, ASP.NET Core and C# programming language. Knowledge of OOP and SOLID principles, as well as design patterns.
+                    </p>
+                </div>
+            </div>
+
+            <div class="skill-block">
+                <img class="skill-image" src="~/img/database.png" />
+                <div class="skill-description">
+                    <h2>Database</h2>
+                    <p>
+                        Necessary skills for engineering and administering databases. Ability to work with MS SQL Server, MySQL, PostgreSQL.
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<section class="custom-section" id="rewiew" style="min-height: 700px;">
+<section class="custom-section" id="rewiew">
     <div class="container">
         <div class="text-center">
-            <h1 class="display-4">My Rewiews</h1>
+            <h1 class="h1-tital-block">My Rewiews</h1>
+        </div>
+
+        <div class="rewiew-container">
+            <div class="rewiew-block">
+                <img class="rewiew-image" src="~/img/backend.png" />
+                <h4 class="rewiew-fio">FirstName LastName</h4>
+                <p class="rewiew-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+            </div>
+
+            <div class="rewiew-block">
+                <img class="rewiew-image" src="~/img/backend.png" />
+                <h4 class="rewiew-fio">FirstName LastName</h4>
+                <p class="rewiew-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+            </div>
+
+            <div class="rewiew-block">
+                <img class="rewiew-image" src="~/img/backend.png" />
+                <h4 class="rewiew-fio">FirstName LastName</h4>
+                <p class="rewiew-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+            </div>
         </div>
     </div>
 </section>
@@ -60,11 +117,10 @@
         <div class="gradiented-image">
             <div class="container">
                 <div class="text-center">
-                    <h1 style="color: #BF3D37; font-size: 3.5rem;">Contact Me</h1>
+                    <h1 class="h1-contact">Contact Me</h1>
 
                     <div class="row">
                         <div class="col contacts-block">
-                            @*<div class="contacts-block-content">*@
                             <h3 class="h3-contacts-block">My contacts</h3>
                             <div class="contact">
                                 <div class="contact-image">
@@ -98,7 +154,6 @@
                                     </span>
                                 </div>
                             </div>
-                            @*</div>*@
                         </div>
 
                         @if (ViewBag.SendEmailResponse != null && ViewBag.SendEmailResponse != "")

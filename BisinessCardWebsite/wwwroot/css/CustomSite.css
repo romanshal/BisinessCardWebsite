@@ -15,7 +15,8 @@
 }
 
 .custom-section {
-    margin-bottom: 100px;
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 
 .logo {
@@ -78,7 +79,7 @@ li {
     margin-right: auto;
 }
 
-.ball{
+.ball {
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -86,19 +87,20 @@ li {
     animation: bounce .5s alternate infinite;
 }
 
-.ball:nth-child(2){
-    animation-delay: .16s;
-}
+    .ball:nth-child(2) {
+        animation-delay: .16s;
+    }
 
-.ball:nth-child(3){
-    animation-delay: .32s;
-}
+    .ball:nth-child(3) {
+        animation-delay: .32s;
+    }
 
-@keyframes bounce{
-    from{
+@keyframes bounce {
+    from {
         transform: scaleX(1.25);
     }
-    to{
+
+    to {
         transform: translateY(-50px) scaleX(1);
     }
 }
@@ -156,6 +158,63 @@ li {
     padding-bottom: 10px;
 }
 
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    align-items: start;
+}
+
+.skill-block {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.skill-image {
+    width: 100px;
+    height: 100px;
+}
+
+.skill-description {
+    width: 230px;
+    margin-left: 15px;
+}
+
+.rewiew-container {
+    flex-wrap: wrap;
+    display: flex;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.rewiew-block {
+    margin-right: 10px;
+    width: 330px;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right,#232B39 40%,#000000 );
+    margin-left: 10px;
+}
+
+.rewiew-image {
+    width: 100px;
+    height: 100px;
+    margin-top: 30px;
+}
+
+.rewiew-fio {
+    color: white;
+}
+
+.rewiew-desc {
+    color: white;
+}
+
 .contact-image {
     width: 20px;
     height: 20px;
@@ -183,6 +242,15 @@ li {
 .social-media {
     display: block;
     left: 0;
+}
+
+h1.h1-tital-block {
+    font-size: 3.5rem;
+}
+
+h1.h1-contact {
+    color: #BF3D37;
+    font-size: 3.5rem;
 }
 
 h3.h3-social-media {
