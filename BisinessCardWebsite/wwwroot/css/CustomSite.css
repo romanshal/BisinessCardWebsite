@@ -23,6 +23,9 @@
     color: white;
     font-size: 30px;
     font-family: fantasy;
+    width: 223px;
+    height: 45px;
+    cursor: default;
 }
 
 ul {
@@ -44,8 +47,7 @@ li {
 }
 
 .short-description {
-    display: block;
-    /* flex-wrap: wrap; */
+    width: 561px;
     align-self: center;
 }
 
@@ -68,6 +70,24 @@ li {
     margin-left: auto;
 }
 
+@media (max-width: 992px) {
+    .prewiew-image {
+        display: none;
+    }
+
+    .short-description {
+        margin-top: 100px;
+    }
+
+    ul.nav {
+        display: none;
+    }
+
+    .container.custom-container {
+        justify-content: center;
+    }
+}
+
 .loader {
     width: 120px;
     height: 75px;
@@ -77,6 +97,7 @@ li {
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 40px;
 }
 
 .ball {
@@ -107,26 +128,27 @@ li {
 
 .main_block {
     display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
 }
 
 .main_image {
-    z-index: 91;
     background: transparent url("../img/dotted.png") repeat left top;
     width: 420px;
     min-width: 420px;
     border-style: solid;
     border-width: 3px;
     border-color: #181A23;
-    opacity: 1;
     padding-bottom: 19px;
-    position: relative;
     margin-top: 84px;
     height: 647px;
     min-height: 647px;
+    margin-left: 5%;
 }
 
 .clip_frame {
-    z-index: 126;
     width: 423px;
     background-color: transparent;
     position: relative;
@@ -136,14 +158,15 @@ li {
 }
 
 .description {
-    /*width: 570px;*/
+    align-self: center;
+    width: 570px;
     min-height: 390px;
     max-height: 642px;
     background-color: transparent;
     font-weight: 400;
     position: relative;
     margin-top: 89px;
-    margin-left: 160px;
+    margin-left: 5%;
 }
 
 .name-elem {
@@ -156,6 +179,13 @@ li {
     font-size: 16px;
     line-height: 19px;
     padding-bottom: 10px;
+}
+
+.description-quote {
+    color: burlywood;
+    text-align: end;
+    margin-top: 40px;
+    font-size: 25px;
 }
 
 .skills-container {
@@ -249,11 +279,7 @@ li {
 
 h1.h1-tital-block {
     font-size: 3.5rem;
-}
-
-h1.h1-contact {
     color: #BF3D37;
-    font-size: 3.5rem;
 }
 
 h3.h3-social-media {
