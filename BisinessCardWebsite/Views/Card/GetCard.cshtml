@@ -1,0 +1,137 @@
+﻿@model BisinessCardWebsite.Models.EmailModel
+<div class="gradient" style="max-height: 700px; min-height: 700px; margin-top: -16px">
+    <div class="gradiented-image" style="max-height: 700px; min-height: 700px;">
+
+    </div>
+</div>
+
+<section class="custom-section" id="about-me">
+    <div class="container main_block">
+        <div class="main_image">
+            <div class="clip_frame">
+                <img src="~/img/me.jpg" />
+            </div>
+        </div>
+
+        <div class="description">
+            <p class="name-elem">My name is Shalabodov Roman.</p>
+            <p class="desc-elem">I was born and raised in Mogilev, in a city in the east of Belarus. Before getting a developer, I was a regular student in the BSUIR.</p>
+            <p class="desc-elem">My professional career as a web developer started 3 years ago when I took a course from NETCRACKER team. After that, I got a job at the National Center of Legal Information.</p>
+            <p class="desc-elem">I specialize in creating websites from scratch, including front-end and back-end development.</p>
+        </div>
+    </div>
+</section>
+
+<section class="custom-section" id="skills" style="min-height: 700px;">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4">My Skills</h1>
+        </div>
+    </div>
+</section>
+
+<section class="custom-section" id="rewiew" style="min-height: 700px;">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="display-4">My Rewiews</h1>
+        </div>
+    </div>
+</section>
+
+<section id="contacts">
+    <div class="gradient">
+        <div class="gradiented-image">
+            <div class="container">
+                <div class="text-center">
+                    <h1 style="color: #BF3D37; font-size: 3.5rem;">Contact Me</h1>
+
+                    <div class="row">
+                        <div class="col contacts-block">
+                            @*<div class="contacts-block-content">*@
+                            <h3 class="h3-contacts-block">My contacts</h3>
+                            <div class="contact">
+                                <div class="contact-image">
+                                    <img src="~/img/location-red.png" style="max-width: 20px;" />
+                                </div>
+                                <div class="contact-item">Belarus, Minsk</div>
+                            </div>
+                            <div class="contact">
+                                <div class="contact-image">
+                                    <img src="~/img/phone-red.png" style="max-width: 35px; margin-left: -5px;" />
+                                </div>
+                                <div class="contact-item">+375(44)758-10-77</div>
+                            </div>
+
+                            <div class="contact">
+                                <div class="contact-image">
+                                    <img src="~/img/email-red.png" style="max-width: 35px; margin-left: -5px;" />
+                                </div>
+                                <div class="contact-item">shalabodov.roman@mail.ru</div>
+                            </div>
+
+                            <div class="social-media">
+                                <h3 class="h3-social-media">I'm on social media</h3>
+                                <div class="social-icons">
+                                    <span class="span-social-icon">
+                                        <a class="icon-instagram" href="#"></a>
+                                    </span>
+
+                                    <span class="span-social-icon">
+                                        <a class="icon-vk" href="#"></a>
+                                    </span>
+                                </div>
+                            </div>
+                            @*</div>*@
+                        </div>
+
+                        @if (ViewBag.SendEmailResponse != null && ViewBag.SendEmailResponse != "")
+                        {
+                            <div class="send-email-message" id="sendEmailResponse">
+                                @ViewBag.SendEmailResponse
+                                <button class="closeBtn" id="closeBtn">Ok</button>
+                            </div>
+                        }
+
+                        <div class="col send-email-block">
+                            <h3 class="h3-send-email-block">Send me a message</h3>
+                            <form method="post" asp-controller="Card" asp-action="SendEmail" asp-antiforgery="true">
+                                <div class="validation" asp-validation-summary="ModelOnly"></div>
+                                <div class="text-field">
+                                    @*<span asp-validation-for="Name"></span>*@
+                                    <input class="text-field__input" id="name" type="text" asp-for="Name" placeholder="Name" value="@Model.Name" />
+                                </div>
+                                <div class="text-field">
+                                    @*<span asp-validation-for="PhoneNumber"></span>*@
+                                    <input class="text-field__input" id="tel" type="tel" asp-for="PhoneNumber" placeholder="Phone Number" value="@Model.PhoneNumber" />
+                                </div>
+                                <div class="text-field">
+                                    @*<span asp-validation-for="EmailAddress"></span>*@
+                                    <input class="text-field__input" id="email" type="email" asp-for="EmailAddress" placeholder="Email" value="@Model.EmailAddress" />
+                                </div>
+                                <div class="text-field">
+                                    <input class="text-field__input" id="topic" type="text" name="Topic" placeholder="Topic" value="@Model.Topic" />
+                                </div>
+                                <div class="text-field">
+                                    <textarea class="text-field__textarea" id="message" name="Message" placeholder="Message">@Model.Message</textarea>
+                                </div>
+
+                                <div>
+                                    <button class="send-button" id="submitBtn" type="submit">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*<script type="text/javascript">
+    $('#closeBtn').click(function () {
+        var node = document.getElementById('sendEmailResponse');
+        node.style.visibility = 'hidden';
+    });
+</script>*@
+
+
