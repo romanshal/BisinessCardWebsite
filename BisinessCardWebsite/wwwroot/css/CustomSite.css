@@ -163,7 +163,7 @@ li {
     flex-wrap: wrap;
     margin-top: 30px;
     margin-bottom: 30px;
-    align-items: start;
+    justify-content: center;
 }
 
 .skill-block {
@@ -185,33 +185,36 @@ li {
     margin-left: 15px;
 }
 
-.rewiew-container {
+.review-container {
     flex-wrap: wrap;
     display: flex;
     margin-top: 30px;
     margin-bottom: 30px;
+    justify-content: center;
 }
 
-.rewiew-block {
-    margin-right: 10px;
+.review-block {
     width: 330px;
     align-items: center;
     text-align: center;
     background: linear-gradient(to right,#232B39 40%,#000000 );
     margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
-.rewiew-image {
+.review-image {
     width: 100px;
     height: 100px;
     margin-top: 30px;
 }
 
-.rewiew-fio {
+.review-fio {
     color: white;
 }
 
-.rewiew-desc {
+.review-desc {
     color: white;
 }
 
