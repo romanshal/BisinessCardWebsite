@@ -26,7 +26,7 @@ namespace BisinessCardWebsite.Controllers
         public IActionResult GetCard() => View(new EmailModel());
 
         [HttpPost]
-        [Route("")]
+        //[Route("")]
         public IActionResult SendEmail(EmailModel email)
         {
             if (ModelState.IsValid)
@@ -34,18 +34,18 @@ namespace BisinessCardWebsite.Controllers
                 var result = _repo.SendEmail(email);
                 if (result)
                 {
-                    ViewBag.SendEmailResponse = "The letter was successfully sent. I will contact you shortly";
-                    return View("GetCard", new EmailModel());
+                    //return Json("The letter was successfully sent. I will contact you shortly");
+                    return Ok("The letter was successfully sent. I will contact you shortly");
                 }
                 else
                 {
-                    ViewBag.SendEmailResponse = "Ops... Something went wrong :(";
-                    return View("GetCard", email);
+                    //return Json("Ops... Something went wrong :(");
+                    return BadRequest();
                 }
             }
             else
             {
-                return View("GetCard", email);
+                return BadRequest();
             }   
         }
 

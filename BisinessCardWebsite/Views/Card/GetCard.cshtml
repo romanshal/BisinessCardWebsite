@@ -114,6 +114,22 @@
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
                 </p>
             </div>
+
+            <div class="review-block">
+                <img class="review-image" src="~/img/backend.png" />
+                <h4 class="review-fio">FirstName LastName</h4>
+                <p class="review-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+            </div>
+
+            <div class="review-block">
+                <img class="review-image" src="~/img/backend.png" />
+                <h4 class="review-fio">FirstName LastName</h4>
+                <p class="review-desc">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+            </div>
         </div>
     </div>
 </section>
@@ -151,50 +167,46 @@
                             <div class="social-media">
                                 <h3 class="h3-social-media">I'm on social media</h3>
                                 <div class="social-icons">
-                                    <span class="span-social-icon">
-                                        <a class="icon-instagram" href="#"></a>
-                                    </span>
 
-                                    <span class="span-social-icon">
-                                        <a class="icon-vk" href="#"></a>
-                                    </span>
+                                    <a href="#" class="link">
+                                        <i class="fa-brands fa-instagram instagram"></i>
+                                    </a>
+
+                                    <a href="#" class="link">
+                                        <i class="fa-brands fa-vk vk"></i>
+                                    </a>
+
+                                    <a href="#" class="link">
+                                        <i class="fa-brands fa-linkedin linkedin"></i>
+                                    </a>
+
                                 </div>
                             </div>
                         </div>
 
-                        @if (ViewBag.SendEmailResponse != null && ViewBag.SendEmailResponse != "")
-                        {
-                            <div class="send-email-message" id="sendEmailResponse">
-                                @ViewBag.SendEmailResponse
-                                <button class="closeBtn" id="closeBtn">Ok</button>
-                            </div>
-                        }
-
                         <div class="col send-email-block">
                             <h3 class="h3-send-email-block">Send me a message</h3>
-                            <form method="post" asp-controller="Card" asp-action="SendEmail" asp-antiforgery="true">
-                                <div class="validation" asp-validation-summary="ModelOnly"></div>
+
+                            <form id="email_form" novalidate>
                                 <div class="text-field">
-                                    @*<span asp-validation-for="Name"></span>*@
-                                    <input class="text-field__input" id="name" type="text" asp-for="Name" placeholder="Name" value="@Model.Name" />
+                                    <input class="text-field__input" id="name" type="text" asp-for="Name" placeholder="Name" />
                                 </div>
                                 <div class="text-field">
-                                    @*<span asp-validation-for="PhoneNumber"></span>*@
-                                    <input class="text-field__input" id="tel" type="tel" asp-for="PhoneNumber" placeholder="Phone Number" value="@Model.PhoneNumber" />
+
+                                    <input class="text-field__input" id="tel" type="tel" asp-for="PhoneNumber" placeholder="Phone Number" autocomplete="off" />
                                 </div>
                                 <div class="text-field">
-                                    @*<span asp-validation-for="EmailAddress"></span>*@
-                                    <input class="text-field__input" id="email" type="email" asp-for="EmailAddress" placeholder="Email" value="@Model.EmailAddress" />
+                                    <input class="text-field__input" id="email" type="email" asp-for="EmailAddress" placeholder="Email" />
                                 </div>
                                 <div class="text-field">
-                                    <input class="text-field__input" id="topic" type="text" name="Topic" placeholder="Topic" value="@Model.Topic" />
+                                    <input class="text-field__input" id="topic" type="text" asp-for="Topic" name="Topic" placeholder="Topic" />
                                 </div>
                                 <div class="text-field">
-                                    <textarea class="text-field__textarea" id="message" name="Message" placeholder="Message">@Model.Message</textarea>
+                                    <textarea class="text-field__textarea" id="message" asp-for="Message" name="Message" placeholder="Message"></textarea>
                                 </div>
 
                                 <div>
-                                    <button class="send-button" id="submitBtn" type="submit">Send</button>
+                                    <button type="button" class="send-button" id="submitBtn">Send</button>
                                 </div>
                             </form>
                         </div>
@@ -210,6 +222,38 @@
         var node = document.getElementById('sendEmailResponse');
         node.style.visibility = 'hidden';
     });
+
+    $(function () {
+        $('#tel').mask("+375(99)-999-99-99")
+    });
+
+    $(function () {
+        $("#submitBtn").click(function () {
+            var data = $("#email_form").serialize();
+
+            $.ajax({
+                type: 'POST',
+                url: '/Card/SendEmail',
+                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                data: data,
+                success: function (result) {
+                    alert(result);
+                    clear_form();
+                },
+                error: function (result) {
+                    alert(result);
+                }
+            })
+        });
+    });
+
+    function clear_form() {
+        document.getElementById('name').value = '';
+        document.getElementById('tel').value = '';
+        document.getElementById('email').value = '';
+        document.getElementById('topic').value = '';
+        document.getElementById('message').value = '';
+    };
 </script>
 
 
