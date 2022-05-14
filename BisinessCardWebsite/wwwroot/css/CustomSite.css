@@ -248,6 +248,35 @@ li {
     color: white;
 }
 
+.response-block {
+    max-width: 500px;
+    min-height: 200px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 1;
+    visibility: hidden;
+    margin-top: 150px;
+    backdrop-filter: blur(1px);
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+h3.h3-response-message {
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+.custom-button {
+    margin-bottom: 20px;
+}
+
+.row-contact-block {
+    z-index: 0;
+}
+
 .contact-image {
     width: 20px;
     height: 20px;

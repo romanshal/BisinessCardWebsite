@@ -34,12 +34,10 @@ namespace BisinessCardWebsite.Controllers
                 var result = _repo.SendEmail(email);
                 if (result)
                 {
-                    //return Json("The letter was successfully sent. I will contact you shortly");
-                    return Ok("The letter was successfully sent. I will contact you shortly");
+                    return Ok();
                 }
                 else
                 {
-                    //return Json("Ops... Something went wrong :(");
                     return BadRequest();
                 }
             }

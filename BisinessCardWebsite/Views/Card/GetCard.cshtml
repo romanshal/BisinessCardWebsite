@@ -115,7 +115,7 @@
                 </p>
             </div>
 
-            <div class="review-block">
+            <div class="review-block" id="hidden-review-block">
                 <img class="review-image" src="~/img/backend.png" />
                 <h4 class="review-fio">FirstName LastName</h4>
                 <p class="review-desc">
@@ -123,7 +123,7 @@
                 </p>
             </div>
 
-            <div class="review-block">
+            <div class="review-block" id="hidden-review-block">
                 <img class="review-image" src="~/img/backend.png" />
                 <h4 class="review-fio">FirstName LastName</h4>
                 <p class="review-desc">
@@ -141,7 +141,12 @@
                 <div class="text-center">
                     <h1 class="h1-tital-block">Contact Me</h1>
 
-                    <div class="row">
+                    <div class="response-block" id="response-block">
+                        <h3 class="h3-response-message" id="h3-response-message"></h3>
+                        <button id="closeBtn" class="btn btn-primary custom-button">Ok</button>
+                    </div>
+
+                    <div class="row row-contact-block">
                         <div class="col contacts-block">
                             <h3 class="h3-contacts-block">My contacts</h3>
                             <div class="contact">
@@ -189,17 +194,16 @@
 
                             <form id="email_form" novalidate>
                                 <div class="text-field">
-                                    <input class="text-field__input" id="name" type="text" asp-for="Name" placeholder="Name" />
+                                    <input class="text-field__input" id="name" type="text" asp-for="Name" placeholder="Name" autocomplete="off" />
                                 </div>
                                 <div class="text-field">
-
                                     <input class="text-field__input" id="tel" type="tel" asp-for="PhoneNumber" placeholder="Phone Number" autocomplete="off" />
                                 </div>
                                 <div class="text-field">
                                     <input class="text-field__input" id="email" type="email" asp-for="EmailAddress" placeholder="Email" />
                                 </div>
                                 <div class="text-field">
-                                    <input class="text-field__input" id="topic" type="text" asp-for="Topic" name="Topic" placeholder="Topic" />
+                                    <input class="text-field__input" id="topic" type="text" asp-for="Topic" name="Topic" placeholder="Topic" autocomplete="off"/>
                                 </div>
                                 <div class="text-field">
                                     <textarea class="text-field__textarea" id="message" asp-for="Message" name="Message" placeholder="Message"></textarea>
@@ -219,33 +223,99 @@
 
 <script type="text/javascript">
     $('#closeBtn').click(function () {
-        var node = document.getElementById('sendEmailResponse');
+        var node = document.getElementById('response-block');
         node.style.visibility = 'hidden';
     });
 
     $(function () {
-        $('#tel').mask("+375(99)-999-99-99")
+        $('#tel').mask("+375(99)-999-99-99");
     });
 
     $(function () {
         $("#submitBtn").click(function () {
-            var data = $("#email_form").serialize();
+            var valid = check_email_form();
 
-            $.ajax({
-                type: 'POST',
-                url: '/Card/SendEmail',
-                contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-                data: data,
-                success: function (result) {
-                    alert(result);
-                    clear_form();
-                },
-                error: function (result) {
-                    alert(result);
-                }
-            })
+            if (valid) {
+                var data = $("#email_form").serialize();
+
+                $.ajax({
+                    type: 'POST',
+                    url: '/Card/SendEmail',
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+                    data: data,
+                    success: function () {
+                        var node = document.getElementById('response-block');
+                        node.style.visibility = 'visible';
+                        document.getElementById('h3-response-message').innerHTML = "The letter was successfully sent. I'll contact you soon";
+                        clear_form();
+                    },
+                    error: function () {
+                        var node = document.getElementById('response-block');
+                        node.style.visibility = 'visible';
+                        document.getElementById('h3-response-message').innerHTML = 'Ops... Something went wrong :(';
+                    }
+                });
+            } else {
+                return;
+            }
         });
     });
+
+    function check_email_form() {
+        var valid_form = true;
+
+        var name = document.getElementById('name');
+        if (name.value == '') {
+            name.style.border = '1px solid red';
+            $('#name').attr('oninput', "on_input(this)");
+            valid_form = false;
+        }
+
+        var tel = document.getElementById('tel');
+        if (tel.value == '') {
+            tel.style.border = '1px solid red';
+            $('#tel').attr('oninput', "on_input(this)");
+            valid_form = false;
+        }
+
+        var email = document.getElementById('email');
+        if (email.value == '') {
+            email.style.border = '1px solid red';
+            $('#email').attr('oninput', "on_input_email(this)");
+            $('#email').attr('pattern', "[a-z0-9._%+-]+@@[a-z0-9.-]+\.[a-z]{2,4}$");
+            valid_form = false;
+        }
+
+        var message = document.getElementById('message');
+        if (message.value == '') {
+            message.style.border = '1px solid red';
+            $('#message').attr('oninput', "on_input(this)");
+            valid_form = false;
+        }
+
+        return valid_form;
+    };
+
+    function on_input(elem) {
+        console.log(elem.value);
+        if (elem.value != '') {
+            elem.style.border = '1px solid #bdbdbd';
+        } else {
+            elem.style.border = '1px solid red';
+        }
+    };
+
+    function on_input_tel() {
+
+    };
+
+    function on_input_email(elem) {
+        if (elem.value != '' && elem.value.match(elem.getAttribute('pattern'))) {
+            elem.style.border = '1px solid #bdbdbd';
+        } else {
+            elem.style.border = '1px solid red';
+        }
+    };
 
     function clear_form() {
         document.getElementById('name').value = '';
