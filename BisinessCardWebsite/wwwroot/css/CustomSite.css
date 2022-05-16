@@ -32,7 +32,7 @@ ul {
     text-align: center;
 }
 
-li {
+li.nav-item {
     min-width: 150px;
 }
 
@@ -221,6 +221,101 @@ li {
     margin-top: 30px;
     margin-bottom: 30px;
     justify-content: center;
+}
+
+.bar-chart {
+    list-style: none;
+    display: block;
+    height: 450px;
+    position: relative;
+    padding: 0;
+    margin: 0px;
+    background: url(../img/axis.png) repeat-x;
+}
+
+    .bar-chart li {
+        display: inline-block;
+        width: 15%;
+        height: 100%;
+        background-color: #CCCCCC;
+        text-align: center;
+        color: #FFFFFF;
+        position: relative;
+        font-size: 18px;
+        font-size: 1.8rem;
+        margin: 0 1.8% 0 0;
+        border: #BBBBBB solid 1px;
+        vertical-align: bottom;
+        border-bottom: #BBBBBB solid 1px;
+        -webkit-box-shadow: inset 0px 1px 0px 0px rgb(255 255 255 / 60%);
+        -moz-box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.6);
+        box-shadow: inset 0px 1px 0px 0px rgb(255 255 255 / 60%);
+    }
+
+        .bar-chart li.axis {
+            width: 8%;
+            border: 0;
+            color: black;
+            border-right: #DDD solid 1px;
+            height: 450px;
+            background: #fafafa;
+            -webkit-box-shadow: inset 0 0 0 0 #ffffff;
+            -moz-box-shadow: inset 0 0 0 0 #ffffff;
+            box-shadow: inset 0 0 0 0 #ffffff;
+        }
+
+        .bar-chart li.aqua {
+            border-color: #8dc5be;
+            background-color: #5fb2a8;
+            background-image: linear-gradient(#b0dbd6, #5fb2a8);
+            height: 95%;
+        }
+
+        .bar-chart li.pink {
+            border-color: #ebc0b5;
+            background-color: #e1ae9e;
+            background-image: linear-gradient(#f4dcd6, #e1ae9e);
+            height: 90%;
+        }
+
+        .bar-chart li.yellow {
+            border-color: #e7af30;
+            background-color: #dfae36;
+            background-image: linear-gradient(#efc563, #dfae36);
+            height: 95%;
+        }
+
+        .bar-chart li.brown {
+            border-color: #dcb386;
+            background-color: #bc8e5b;
+            background-image: linear-gradient(#dcba83, #bc8e5b);
+            height: 75%;
+        }
+
+        .bar-chart li.red {
+            border-color: #e14949;
+            background-color: #ca4544;
+            background-image: linear-gradient(#da6d6c, #ca4544);
+            height: 40%;
+        }
+
+.stack-label {
+    font-size: 1.6rem;
+    margin: -0.6em 0 92px 0;
+}
+
+.percent {
+    opacity: 0.8;
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    line-height: 1em;
+}
+
+.skill {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
 }
 
 .review-block {
