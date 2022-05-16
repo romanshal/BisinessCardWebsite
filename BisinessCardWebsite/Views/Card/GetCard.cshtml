@@ -203,7 +203,7 @@
                                     <input class="text-field__input" id="email" type="email" asp-for="EmailAddress" placeholder="Email" />
                                 </div>
                                 <div class="text-field">
-                                    <input class="text-field__input" id="topic" type="text" asp-for="Topic" name="Topic" placeholder="Topic" autocomplete="off"/>
+                                    <input class="text-field__input" id="topic" type="text" asp-for="Topic" name="Topic" placeholder="Topic" autocomplete="off" />
                                 </div>
                                 <div class="text-field">
                                     <textarea class="text-field__textarea" id="message" asp-for="Message" name="Message" placeholder="Message"></textarea>
@@ -228,7 +228,11 @@
     });
 
     $(function () {
-        $('#tel').mask("+375(99)-999-99-99");
+        $('#tel').mask("+375(99)-999-99-99", {
+            completed: function () {
+                document.getElementById('tel').style.border = '1px solid #bdbdbd';
+            }
+        });
     });
 
     $(function () {
@@ -274,7 +278,6 @@
         var tel = document.getElementById('tel');
         if (tel.value == '') {
             tel.style.border = '1px solid red';
-            $('#tel').attr('oninput', "on_input(this)");
             valid_form = false;
         }
 
@@ -297,7 +300,6 @@
     };
 
     function on_input(elem) {
-        console.log(elem.value);
         if (elem.value != '') {
             elem.style.border = '1px solid #bdbdbd';
         } else {
@@ -305,8 +307,13 @@
         }
     };
 
-    function on_input_tel() {
-
+    function on_input_tel(elem) {
+        console.log(elem.value);
+        if (elem.value != '') {
+            elem.style.border = '1px solid #bdbdbd';
+        } else {
+            elem.style.border = '1px solid red';
+        }
     };
 
     function on_input_email(elem) {
