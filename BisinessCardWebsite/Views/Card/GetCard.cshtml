@@ -45,91 +45,232 @@
     </div>
 </section>
 
-<section class="custom-section" id="skills">
-    <div class="container">
-        <div class="text-center">
-            <h1 class="h1-tital-block">My Skills</h1>
-        </div>
-        <div class="skills-container">
-            <div class="skill-block">
-                <img class="skill-image" src="~/img/frontend.png" />
-                <div class="skill-description">
-                    <h2>Frontend</h2>
-                    <p>
-                        Provide frontend developer services for HTML, CSS, JS. UI development with Angular and TypeScript.
-                    </p>
+<section class="custom-section custom-section-dark" id="skills">
+    <div class="container custom-container">
+        <div>
+            <div class="text-center">
+                <h1 class="h1-tital-block">My Skills</h1>
+            </div>
+            <div class="skills-container">
+                <div class="skill-block">
+                    <img class="skill-image" src="~/img/frontend.png" />
+                    <div class="skill-description">
+                        <h2>Frontend</h2>
+                        <p>
+                            Provide frontend developer services for HTML, CSS, JS. UI development with Angular and TypeScript.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="skill-block">
+                    <img class="skill-image" src="~/img/backend.png" />
+                    <div class="skill-description">
+                        <h2>Backend</h2>
+                        <p>
+                            Strong knowledge of ASP.NET, ASP.NET Core and C# programming language. Knowledge of OOP and SOLID principles, as well as design patterns.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="skill-block">
+                    <img class="skill-image" src="~/img/database.png" />
+                    <div class="skill-description">
+                        <h2>Database</h2>
+                        <p>
+                            Necessary skills for engineering and administering databases. Ability to work with MS SQL Server, MySQL, PostgreSQL.
+                        </p>
+                    </div>
                 </div>
             </div>
-
-            <div class="skill-block">
-                <img class="skill-image" src="~/img/backend.png" />
-                <div class="skill-description">
-                    <h2>Backend</h2>
-                    <p>
-                        Strong knowledge of ASP.NET, ASP.NET Core and C# programming language. Knowledge of OOP and SOLID principles, as well as design patterns.
-                    </p>
-                </div>
-            </div>
-
-            <div class="skill-block">
-                <img class="skill-image" src="~/img/database.png" />
-                <div class="skill-description">
-                    <h2>Database</h2>
-                    <p>
-                        Necessary skills for engineering and administering databases. Ability to work with MS SQL Server, MySQL, PostgreSQL.
-                    </p>
-                </div>
-            </div>
         </div>
 
-        <div class="text-center">
-            <h2>Technology stack</h2>
-        </div>
-        <div class="technology-stack-container">
-            <ul class="bar-chart">
-                <li class="axis">
-                    <div class="stack-label">Jedi</div>
-                    <div class="stack-label">Ninja</div>
-                    <div class="stack-label">Geek</div>
-                    <div class="stack-label">Newbie</div>
-                </li>
-                <li class="aqua">
-                    <div class="percent">
-                        95<span>%</span>
-                    </div>
-                    <div class="skill">Tea drinking</div>
-                </li>                
-                <li class="pink">
-                    <div class="percent">
-                        90<span>%</span>
-                    </div>
-                    <div class="skill">Design Systems</div>
-                </li>                
-                <li class="yellow">
-                    <div class="percent">
-                        95<span>%</span>
-                    </div>
-                    <div class="skill">Figma</div>
-                </li>
-                <li class="brown">
-                    <div class="percent">
-                        95<span>%</span>
-                    </div>
-                    <div class="skill">Figma</div>
-                </li>               
-                <li class="red">
-                    <div class="percent">
-                        95<span>%</span>
-                    </div>
-                    <div class="skill">Figma</div>
-                </li>
-            </ul>
+        <div id="stack-section">
+            <div class="text-center">
+                <h2>Technology stack</h2>
+            </div>
+            <div class="technology-stack-container">
+                <div class="stack-block">
+                    <ul class="custom-bar">
+                        <li class="axis">
+                            <div class="stack-label">Jedi</div>
+                            <div class="stack-label">Ninja</div>
+                            <div class="stack-label">Geek</div>
+                            <div class="stack-label">Newbie</div>
+                        </li>
+                        <li class="aqua" style="height: 85%; width: 10%;">
+                            <div class="percent">
+                                85<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/html5.png" />
+                            </div>
+                            <div class="stack-description">
+                                HTML5
+                            </div>
+                        </li>
+                        <li class="pink" style="height: 75%; width: 10%;">
+                            <div class="percent">
+                                75<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/css3.png" />
+                            </div>
+                            <div class="stack-description">
+                                CSS3
+                            </div>
+                        </li>
+                        <li class="yellow" style="height: 75%; width: 10%;">
+                            <div class="percent">
+                                75<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/javascript.png" />
+                            </div>
+                            <div class="stack-description">
+                                JavaScript
+                            </div>
+                        </li>
+                        <li class="brown" style="height: 80%; width: 10%;">
+                            <div class="percent">
+                                80<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/jquery.png" />
+                            </div>
+                            <div class="stack-description">
+                                jQuery
+                            </div>
+                        </li>
+                        <li class="red" style="height: 90%; width: 10%;">
+                            <div class="percent">
+                                90<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/angular.png" />
+                            </div>
+                            <div class="stack-description">
+                                Angular
+                            </div>
+                        </li>
+                        <li class="green" style="height: 70%; width: 10%;">
+                            <div class="percent">
+                                70<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/bootstrap.png" />
+                            </div>
+                            <div class="stack-description">
+                                Bootstrap
+                            </div>
+                        </li>
+                        <li class="blue" style="height: 65%; width: 10%;">
+                            <div class="percent">
+                                65<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/nodejs.png" />
+                            </div>
+                            <div class="stack-description">
+                                Node
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="stack-block">
+                    <ul class="custom-bar">
+                        <li class="axis">
+                            <div class="stack-label">Jedi</div>
+                            <div class="stack-label">Ninja</div>
+                            <div class="stack-label">Geek</div>
+                            <div class="stack-label">Newbie</div>
+                        </li>
+                        <li class="yellow" style="height: 95%; width: 10%;">
+                            <div class="percent">
+                                95<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/c-sharp.png" />
+                            </div>
+                            <div class="stack-description">
+                                C#
+                            </div>
+                        </li>
+                        <li class="red" style="height: 90%; width: 10%;">
+                            <div class="percent">
+                                90<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/net-core.png" />
+                            </div>
+                            <div class="stack-description">
+                                .Net Core
+                            </div>
+                        </li>
+                        <li class="aqua" style="height: 75%; width: 10%;">
+                            <div class="percent">
+                                75<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/java.png" />
+                            </div>
+                            <div class="stack-description">
+                                Java
+                            </div>
+                        </li>
+                        <li class="brown" style="height: 70%; width: 10%;">
+                            <div class="percent">
+                                70<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/spring.png" />
+                            </div>
+                            <div class="stack-description">
+                                Spring
+                            </div>
+                        </li>
+                        <li class="blue" style="height: 90%; width: 10%;">
+                            <div class="percent">
+                                90<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/microsoft-sql-server.png" />
+                            </div>
+                            <div class="stack-description">
+                                SQL Server
+                            </div>
+                        </li>
+                        <li class="pink" style="height: 80%; width: 10%;">
+                            <div class="percent">
+                                80<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/postgresql.png" />
+                            </div>
+                            <div class="stack-description">
+                                PostgreSQL
+                            </div>
+                        </li>
+                        <li class="green" style="height: 90%; width: 10%;">
+                            <div class="percent">
+                                90<span>%</span>
+                            </div>
+                            <div class="skill">
+                                <img class="stack-skill" src="~/img/github.png" />
+                            </div>
+                            <div class="stack-description">
+                                Github
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="custom-section" id="review">
-    <div class="container">
+    <div class="container custom-container">
         <div class="text-center">
             <h1 class="h1-tital-block">My Reviews</h1>
         </div>
@@ -181,7 +322,7 @@
 <section id="contacts">
     <div class="gradient">
         <div class="gradiented-image">
-            <div class="container">
+            <div class="container custom-container">
                 <div class="text-center">
                     <h1 class="h1-tital-block">Contact Me</h1>
 
