@@ -1,0 +1,17 @@
+﻿.animation-item-right {
+    transform: translate(120%, 0px);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.animation-item-left {
+    transform: translate(-120%, 0px);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+    .animation-item-right.animation-activ,
+    .animation-item-left.animation-activ {
+        transform: translate(0px, 0px);
+        opacity: 1;
+    }
