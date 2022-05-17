@@ -201,6 +201,7 @@ li.nav-item {
     text-align: end;
     margin-top: 40px;
     font-size: 25px;
+    font-family: auto;
 }
 
 .skills-container {
@@ -253,13 +254,14 @@ li.nav-item {
     .custom-bar li {
         display: inline-block;
         height: 100%;
+        width: 11%;
         background-color: #CCCCCC;
         text-align: center;
         color: #FFFFFF;
         position: relative;
         font-size: 18px;
         font-size: 1.8rem;
-        margin: 0 1.8% 0 0;
+        margin: 0 0 0 1.71%;
         border: #BBBBBB solid 1px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
@@ -273,6 +275,7 @@ li.nav-item {
 li.axis {
     width: 8%;
     border: 0;
+    margin: 0 1.47% 0 0;
     color: black;
     border-right: #DDD solid 1px;
     height: 450px;
