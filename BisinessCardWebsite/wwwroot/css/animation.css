@@ -10,8 +10,96 @@
     transition: all 0.8s ease 0s;
 }
 
-    .animation-item-right.animation-activ,
-    .animation-item-left.animation-activ {
+.animation-skill {
+    transform: translate(0px, 100%);
+    opacity: 0;
+}
+
+.animation-skill-frontend {
+    transition: all 0.8s ease 0s;
+}
+
+.animation-skill-backend {
+    transition: all 0.8s ease 0.5s;
+}
+
+.animation-skill-database {
+    transition: all 0.8s ease 1s;
+}
+
+.animation-item-right.animation-activ,
+.animation-item-left.animation-activ,
+.animation-skill.animation-activ {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.animation-bar li:nth-child(n+2) {
+    transform: translate(0px, 120%);
+    transition: all 0.8s ease 0s;
+    opacity: 0;
+}
+
+.animation-bar.animation-activ li:nth-child(n+2) {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.animation-bar.animation-activ li:nth-child(2) {
+    transition: all 0.8s ease 0s;
+}
+
+.animation-bar.animation-activ li:nth-child(3) {
+    transition: all 0.8s ease 0.2s;
+}
+
+.animation-bar.animation-activ li:nth-child(4) {
+    transition: all 0.8s ease 0.3s;
+}
+
+.animation-bar.animation-activ li:nth-child(5) {
+    transition: all 0.8s ease 0.4s;
+}
+
+.animation-bar.animation-activ li:nth-child(6) {
+    transition: all 0.8s ease 0.5s;
+}
+
+.animation-bar.animation-activ li:nth-child(7) {
+    transition: all 0.8s ease 0.6s;
+}
+
+.animation-bar.animation-activ li:nth-child(8) {
+    transition: all 0.8s ease 0.7s;
+}
+
+.animation-review {
+    transform: translate(0px, 100%);
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+    .animation-review.animation-activ:nth-child(n) {
         transform: translate(0px, 0px);
         opacity: 1;
+    }
+
+    .animation-review.animation-activ:nth-child(1) {
+        transition: all 0.8s ease 0s;
+    }
+
+    .animation-review.animation-activ:nth-child(2) {
+        transition: all 0.8s ease 0.2s;
+    }
+
+    .animation-review.animation-activ:nth-child(3) {
+        transition: all 0.8s ease 0.3s;
+    }
+
+    .animation-review.animation-activ:nth-child(4) {
+        transition: all 0.8s ease 0.4s;
+    }
+
+    .animation-review.animation-activ:nth-child(5) {
+        transition: all 0.8s ease 0.5s;
     }

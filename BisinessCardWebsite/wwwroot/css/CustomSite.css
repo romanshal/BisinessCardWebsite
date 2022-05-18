@@ -148,6 +148,7 @@ li.nav-item {
     flex-wrap: wrap;
     margin-bottom: 30px;
     justify-content: center;
+    overflow: hidden;
 }
 
 .main_image {
@@ -208,6 +209,7 @@ li.nav-item {
 .skills-container {
     display: flex;
     flex-wrap: wrap;
+    overflow: hidden;
     margin-top: 30px;
     margin-bottom: 30px;
     justify-content: center;
@@ -235,9 +237,14 @@ li.nav-item {
 .review-container {
     flex-wrap: wrap;
     display: flex;
+    overflow: hidden;
     margin-top: 30px;
     margin-bottom: 30px;
     justify-content: center;
+}
+
+.stack-block {
+    overflow: hidden;
 }
 
 .custom-bar {
@@ -250,6 +257,7 @@ li.nav-item {
     margin-top: 40px;
     background: url(../img/axis.png) repeat-x;
     border-bottom: #dddddd solid 1px;
+    overflow-wrap: break-word;
 }
 
     .custom-bar li {
