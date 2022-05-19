@@ -27,9 +27,23 @@
     transition: all 0.8s ease 1s;
 }
 
+.animation-contact {
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+}
+
+.animation-contact-left {
+    transform: translate(-120%, 0px);
+}
+
+.animation-contact-right {
+    transform: translate(120%, 0px);
+}
+
 .animation-item-right.animation-activ,
 .animation-item-left.animation-activ,
-.animation-skill.animation-activ {
+.animation-skill.animation-activ,
+.animation-contact.animation-activ {
     transform: translate(0px, 0px);
     opacity: 1;
 }

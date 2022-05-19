@@ -4,6 +4,7 @@ const animItemsSmall = document.querySelectorAll('.animation-item-small');
 const animSkills = document.querySelectorAll('.animation-skill');
 const animBarItems = document.querySelectorAll('.animation-bar');
 const animReviewItems = document.querySelectorAll('.animation-review');
+const animContactItem = document.querySelectorAll('.animation-contact');
 
 if (animItems.length > 0 || animItemsSmall.length > 0 || animSkills.length > 0 || animBarItems.length > 0 || animReviewItems.length > 0) {
     window.addEventListener('scroll', animOnScroll);
@@ -86,6 +87,24 @@ if (animItems.length > 0 || animItemsSmall.length > 0 || animSkills.length > 0 |
                 const animItemHeight = animItem.offsetHeight;
                 const animItemOffset = offset(animItem).top;
                 const animStart = 0.15;
+
+                let animItemPoint = window.innerHeight - animItemHeight / animStart;
+                if (animItemHeight > window.innerHeight) {
+                    animItemPoint = window.innerHeight - window.innerHeight / animStart;
+                }
+
+                if ((pageYOffset > animItemOffset - animItemPoint)) {
+                    animItem.classList.add('animation-activ');
+                }
+            }
+        }
+
+        if (animContactItem.length > 0) {
+            for (let index = 0; index < animContactItem.length; index++) {
+                const animItem = animContactItem[index];
+                const animItemHeight = animItem.offsetHeight;
+                const animItemOffset = offset(animItem).top;
+                const animStart = 0.18;
 
                 let animItemPoint = window.innerHeight - animItemHeight / animStart;
                 if (animItemHeight > window.innerHeight) {
