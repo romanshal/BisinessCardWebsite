@@ -42,8 +42,8 @@
     animation: hue-rotate 1s linear infinite alternate;
 }
 
-@keyframes hue-rotate{
-    to{
+@keyframes hue-rotate {
+    to {
         filter: hue-rotate(90deg);
     }
 }
@@ -141,6 +141,10 @@ li.nav-item {
     #stack-section {
         display: none;
     }
+
+    .scrollup {
+        display: none!important;
+    }
 }
 
 .loader {
@@ -179,6 +183,18 @@ li.nav-item {
     to {
         transform: translateY(-50px) scaleX(1);
     }
+}
+
+.scrollup {
+    width: 40px;
+    height: 40px;
+    opacity: 0.3;
+    position: fixed;
+    bottom: 50px;
+    right: 5%;
+    display: none;
+    text-indent: -9999px;
+    background: url('../img/icon_top.png') no-repeat;
 }
 
 .main_block {
@@ -793,6 +809,11 @@ h3.h3-send-email-block {
 
 .send-email-block {
     margin-left: 20px;
+}
+
+.footer-container {
+    text-align: center;
+    color: white;
 }
 
 ::-webkit-scrollbar {

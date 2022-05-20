@@ -44,11 +44,11 @@
         @RenderBody()
     </main>
 
-    @*<footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2022 - Bisiness Card Wibsite - <a asp-area="" asp-controller="Card" asp-action="GetCard">Главная</a>
+    <footer class="footer text-muted">
+            <div class="container footer-container border-top">
+                All rights reserved | @DateTime.Now.ToString("yyyy")
             </div>
-        </footer>*@
+        </footer>
 
     <script src="~/js/animation.js" type="text/javascript"></script>
 </body>
