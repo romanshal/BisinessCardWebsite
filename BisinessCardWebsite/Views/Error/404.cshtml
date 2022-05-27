@@ -1,0 +1,66 @@
+﻿@{
+    Layout = null;
+}
+<style>
+    body {
+        background: url(../img/space-bg.jpg) no-repeat;
+        overflow: hidden;
+    }
+
+    .custom-container {
+        text-align: center;
+        height: 100%
+    }
+
+    .error-block{
+        margin-top: 15%;
+    }
+
+    h1, h2, h3 {
+        position: relative;
+        margin: auto;
+    }
+
+    h1{
+        z-index: 0;
+    }
+
+    h2, h3, .astronaut{
+        z-index: 1;
+    }
+
+    .code {
+        font-size: 500px;
+        font-size: 30vw;
+        color: #7926ac;
+        font-family: fantasy;
+        opacity: 0.8;
+    }
+
+    .houston {
+        color: #f5e57f;
+        margin: -20% 0 0 0;
+        font-size: 3vw;
+    }
+
+    .description {
+        color: #fff;
+        font-size: 5vw;
+    }
+
+    .astronaut{
+
+    }
+</style>
+
+<body>
+    <div class="custom-container">
+        <div class="error-block">
+            <img class="astronaut" src="~/img/astronaut.png" />
+            <h1 class="code">404</h1>
+            <h3 class="houston">Houston, we have a problem</h3>
+            <h2 class="description">This page does not exist</h2>
+        </div>
+    </div>
+</body>
+

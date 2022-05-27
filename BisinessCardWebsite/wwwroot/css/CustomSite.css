@@ -33,6 +33,7 @@
 }
 
 .logo {
+    margin: auto;
     color: white;
     font-size: 30px;
     font-family: fantasy;
@@ -814,6 +815,12 @@ h3.h3-send-email-block {
 
 .send-email-block {
     margin-left: 20px;
+}
+
+@media (max-width: 445px) {
+    .send-email-block{
+        margin-bottom: 20%;
+    }
 }
 
 .footer-container {

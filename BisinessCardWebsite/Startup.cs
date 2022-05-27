@@ -30,19 +30,20 @@ namespace BisinessCardWebsite
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
+            env.EnvironmentName = "Production";
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
             else
             {
-                app.UseExceptionHandler("/Card/Error");
+                //app.UseExceptionHandler("/error");
                 app.UseHsts();
             }
 
             app.UseStaticFiles();
             app.UseHttpsRedirection();
-            app.UseStatusCodePages();
+            app.UseStatusCodePagesWithReExecute("/error", "?code={0}");
             app.UseMvcWithDefaultRoute();
         }
     }
