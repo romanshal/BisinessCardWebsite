@@ -26,7 +26,7 @@
 <a href="#" class="scrollup">Наверх</a>
 
 <section class="custom-section" id="about-me">
-    <div class="container"  style="display: contents;">
+    <div class="container" style="display: contents;">
         <div class="main_block">
             <div class="main_image animation-item animation-item-left">
                 <div class="clip_frame">
@@ -277,12 +277,12 @@
 
         <div class="review-container">
             @*<div class="review-block animation-review">
-                <img class="review-image" src="~/img/artyom.jpg" />
-                <h4 class="review-fio">Artyom Prokhorov</h4>
-                <p class="review-desc">
-                    During his work, he proved himself to be a conscientious, purposeful, responsible, qualified and diligent worker. Strives to constantly learn new methods and technologies of programming. Puts them into practice.
-                </p>
-            </div>*@
+                    <img class="review-image" src="~/img/artyom.jpg" />
+                    <h4 class="review-fio">Artyom Prokhorov</h4>
+                    <p class="review-desc">
+                        During his work, he proved himself to be a conscientious, purposeful, responsible, qualified and diligent worker. Strives to constantly learn new methods and technologies of programming. Puts them into practice.
+                    </p>
+                </div>*@
 
             <div class="review-block animation-review">
                 <div class="review-block-front">
@@ -297,7 +297,7 @@
                     </p>
                 </div>
             </div>
-            
+
             <div class="review-block animation-review">
                 <div class="review-block-front">
                     <img class="review-image" src="~/img/artyom.jpg" alt="" />
@@ -311,7 +311,7 @@
                     </p>
                 </div>
             </div>
-            
+
             <div class="review-block animation-review">
                 <div class="review-block-front">
                     <img class="review-image" src="~/img/artyom.jpg" alt="" />
@@ -325,7 +325,7 @@
                     </p>
                 </div>
             </div>
-            
+
             <div class="review-block animation-review">
                 <div class="review-block-front">
                     <img class="review-image" src="~/img/artyom.jpg" alt="" />
@@ -339,7 +339,7 @@
                     </p>
                 </div>
             </div>
-            
+
             <div class="review-block animation-review">
                 <div class="review-block-front">
                     <img class="review-image" src="~/img/artyom.jpg" alt="" />
@@ -556,8 +556,9 @@
     };
 
     $(document).ready(function () {
-        console.log(document.documentElement.clientHeight);
         console.log(document.documentElement.offsetHeight);
+        console.log($('#contacts').height());
+        console.log(document.documentElement.offsetHeight - $('#contacts').height() * 2);
         $(window).scroll(function () {
             if ($(this).scrollTop() > 100) {
                 $('.scrollup').fadeIn();
@@ -567,7 +568,7 @@
         });
 
         $(window).scroll(function () {
-            if ($(this).scrollTop() > 3000) {
+            if ($(this).scrollTop() > document.documentElement.offsetHeight - $('#contacts').height() * 2) {
                 $('.scrollup').css({ 'background': '' });
                 $('.scrollup').css({ 'background': 'url(\'../img/icon_top_negate.png\') no-repeat' });
             } else {
