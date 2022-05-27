@@ -360,7 +360,7 @@
 <section id="contacts">
     <div class="gradient">
         <div class="gradiented-image">
-            <div class="container custom-container">
+            <div class="container last-custom-container">
                 <div class="text-center">
                     <h1 class="h1-tital-block">Contact Me</h1>
 
@@ -556,12 +556,23 @@
     };
 
     $(document).ready(function () {
-
+        console.log(document.documentElement.clientHeight);
+        console.log(document.documentElement.offsetHeight);
         $(window).scroll(function () {
             if ($(this).scrollTop() > 100) {
                 $('.scrollup').fadeIn();
             } else {
                 $('.scrollup').fadeOut();
+            }
+        });
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 3000) {
+                $('.scrollup').css({ 'background': '' });
+                $('.scrollup').css({ 'background': 'url(\'../img/icon_top_negate.png\') no-repeat' });
+            } else {
+                $('.scrollup').css({ 'background': '' });
+                $('.scrollup').css({ 'background': 'url(\'../img/icon_top.png\') no-repeat' });
             }
         });
 

@@ -15,6 +15,10 @@
     padding: 5% 0 0 0;
 }
 
+.last-custom-container {
+    padding: 5% 0 5% 0;
+}
+
 .header-container {
     margin-bottom: auto;
 }
@@ -143,7 +147,7 @@ li.nav-item {
     }
 
     .scrollup {
-        display: none!important;
+        display: none !important;
     }
 }
 
@@ -195,6 +199,7 @@ li.nav-item {
     display: none;
     text-indent: -9999px;
     background: url('../img/icon_top.png') no-repeat;
+    z-index: 1;
 }
 
 .main_block {
