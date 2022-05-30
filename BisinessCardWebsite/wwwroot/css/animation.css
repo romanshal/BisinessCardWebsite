@@ -1,4 +1,5 @@
-﻿.animation-item-right {
+﻿/*Main page*/
+.animation-item-right {
     transform: translate(120%, 0px);
     opacity: 0;
     transition: all 0.8s ease 0s;
@@ -117,3 +118,34 @@
     .animation-review.animation-activ:nth-child(5) {
         transition: all 0.8s ease 0.5s;
     }
+
+
+/*Error page*/
+.animation-button {
+    transform: translate(0, -400%) scale(2);
+    transition: all 1s ease 0s;
+}
+
+.animation-error-block {
+    transform: translate(0, -400%);
+    transition: all 1s ease 0s;
+    opacity: 0;
+}
+
+.animation-img {
+    transition: all 1s ease 0s;
+    opacity: 1 !important;
+}
+
+.animation-img-right {
+    transform: translate(460%);
+    transition: all 1s ease 0.8s;
+    opacity: 0 !important;
+}
+
+.animation-desc {
+    animation: compression 1s linear 0s;
+    white-space: nowrap;
+    width: 0%;
+    overflow: hidden;
+}

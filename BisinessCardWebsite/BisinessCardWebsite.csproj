@@ -15,4 +15,8 @@
     <None Remove="wwwroot\Новая папка\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\css\errorsite.css" />
+  </ItemGroup>
+
 </Project>
