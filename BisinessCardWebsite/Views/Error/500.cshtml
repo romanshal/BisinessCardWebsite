@@ -1,1 +1,43 @@
-﻿
+﻿@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/css/errorsite.css" />
+<link rel="stylesheet" href="~/css/animation.css" />
+<body>
+    <div class="custom-container">
+        <div class="error-block" id="error-block">
+            <img class="astronaut" src="~/img/astronaut.png" />
+            <h1 class="code">500</h1>
+            <h3 class="houston">Houston, we have a problem</h3>
+            <h2 class="description">
+                Something went wrong
+            </h2>
+        </div>
+        <div class="back-button" id="back-button" onclick="backToMain()">
+            <h1 id="desc">Back to Earth</h1>
+            <img id="shuttle" src="~/img/space-shuttle.png" />
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript">
+    function backToMain() {
+        addClass('animation-img', 'shuttle');
+        addClass('animation-button', 'back-button');
+        addClass('animation-error-block', 'error-block');
+        addClass('animation-desc', 'desc');
+        setTimeout(() => {
+            addClass('animation-img-right', 'shuttle');
+            setTimeout(() => {
+                window.location.href = 'https://localhost:44318/';
+            }, 1800);
+        }, 800);
+    }
+
+    function addClass(style, id) {
+        let block = document.getElementById(id);
+        block.classList.add(style);
+    }
+</script>
+
