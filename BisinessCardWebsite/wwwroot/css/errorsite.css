@@ -81,7 +81,7 @@ h2, h3, .astronaut {
 
     .back-button h1 {
         margin: 26px;
-        color: red;
+        color: #fff;
         cursor: pointer;
         margin-left: -7px;
     }
@@ -99,4 +99,5 @@ h2, h3, .astronaut {
 .back-button img {
     opacity: 0;
     margin-left: -37px;
+    margin-top: -17px;
 }

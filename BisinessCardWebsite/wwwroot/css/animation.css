@@ -127,8 +127,8 @@
 }
 
 .animation-error-block {
-    transform: translate(0, -400%);
-    transition: all 1s ease 0s;
+    transform: translate(0, -200%);
+    transition: all 1.5s ease 0s;
     opacity: 0;
 }
 
