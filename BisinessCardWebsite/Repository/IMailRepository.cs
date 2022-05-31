@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BisinessCardWebsite.Repository
 {
-    public interface ICardRepository
+    public interface IMailRepository
     {
-        CardViewModel GetCard();
+        bool SendEmail(EmailModel email);
     }
 }

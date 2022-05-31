@@ -12,12 +12,14 @@ namespace BisinessCardWebsite.Controllers
 {
     public class CardController : Controller
     {
-        private readonly ICardRepository _repo;
+        private readonly ICardRepository _cardRepo;
+        private readonly IMailRepository _mailRepo;
         private readonly ILogger<CardController> _logger;
 
-        public CardController(ICardRepository repo, ILogger<CardController> logger)
+        public CardController(ICardRepository cardRepo, IMailRepository mailRepo, ILogger<CardController> logger)
         {
-            this._repo = repo;
+            this._cardRepo = cardRepo;
+            this._mailRepo = mailRepo;
             this._logger = logger;
         }
 
@@ -31,7 +33,7 @@ namespace BisinessCardWebsite.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = _repo.SendEmail(email);
+                var result = _mailRepo.SendEmail(email);
                 if (result)
                 {
                     return Ok();

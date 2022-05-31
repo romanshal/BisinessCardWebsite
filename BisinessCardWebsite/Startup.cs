@@ -24,6 +24,7 @@ namespace BisinessCardWebsite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<ICardRepository, CardRepository>();
+            services.AddTransient<IMailRepository, MailRepository>();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 

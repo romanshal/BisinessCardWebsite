@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 
 namespace BisinessCardWebsite.Repository.Impl
@@ -18,11 +19,6 @@ namespace BisinessCardWebsite.Repository.Impl
             };
 
             return card;
-        }
-
-        public bool SendEmail(EmailModel email)
-        {
-            return true;
         }
     }
 }
